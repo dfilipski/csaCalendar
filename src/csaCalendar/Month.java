@@ -11,6 +11,15 @@ public class Month {
         this.firstDay = firstDay;
     }
 
+    @Override
+    public String toString() {
+        return "Month{" +
+                "name='" + name + '\'' +
+                ", days=" + days +
+                ", firstDay='" + firstDay + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
