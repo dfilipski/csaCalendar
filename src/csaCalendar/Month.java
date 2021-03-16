@@ -4,11 +4,13 @@ public class Month {
     private String name;
     private int days;
     private String firstDay;
+    private final String[] weekDays = new String[]{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday"};
 
-    public Month(String name, int days, String firstDay) {
+    public Month(String name, int days, int firstDayNumber) {
         this.name = name;
         this.days = days;
-        this.firstDay = firstDay;
+        this.firstDay = weekDays[firstDayNumber];
     }
 
     @Override
