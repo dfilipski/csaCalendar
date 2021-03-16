@@ -4,6 +4,7 @@ public class Month {
     private String name;
     private int days;
     private String firstDay;
+    private int firstDayNumber;
     private final String[] weekDays = new String[]{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
             "Friday", "Saturday"};
 
@@ -11,6 +12,7 @@ public class Month {
         this.name = name;
         this.days = days;
         this.firstDay = weekDays[firstDayNumber];
+        this.firstDayNumber = firstDayNumber;
     }
 
     @Override
