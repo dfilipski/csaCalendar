@@ -17,11 +17,28 @@ public class Month {
 
     @Override
     public String toString() {
-        return "Month{" +
-                "name='" + name + '\'' +
-                ", days=" + days +
-                ", firstDay='" + firstDay + '\'' +
-                '}';
+        String out = name + "\n";
+        String dirtyMonth =
+                "S   M   Tu  W   Th  F   S  \n" +
+                " X   X    X   X    X   X   X \n" +
+                " X   X    X   X    X   X   X \n" +
+                " X   X    X   X    X   X   X \n" +
+                " X   X    X   X    X   X   X \n" +
+                " X   X    X   X    X   X   X \n" +
+                " X   X    X   X    X   X   X ";
+        String cleanMonth = dirtyMonth;
+
+        for (int i = 0; i < firstDayNumber; ++i) {
+            cleanMonth = cleanMonth.replaceFirst("X", "_");
+        }
+
+        for (int i = 1; i <= days; ++i) {
+            cleanMonth = cleanMonth.replaceFirst("X", String.valueOf(i));
+        }
+        cleanMonth = cleanMonth.replaceAll("X", "");
+        System.out.println(cleanMonth);
+
+        return out + cleanMonth;
     }
 
     public String getName() {
