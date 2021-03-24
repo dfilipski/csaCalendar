@@ -19,21 +19,24 @@ public class Month {
     public String toString() {
         String out = name + "\n";
         String dirtyMonth =
-                "S   M   Tu  W   Th  F   S  \n" +
-                " X   X    X   X    X   X   X \n" +
-                " X   X    X   X    X   X   X \n" +
-                " X   X    X   X    X   X   X \n" +
-                " X   X    X   X    X   X   X \n" +
-                " X   X    X   X    X   X   X \n" +
-                " X   X    X   X    X   X   X ";
+                " S   M   Tu  W   Th  F   S  \n" +
+                " X   X   X   X   X   X   X \n" +
+                " X   X   X   X   X   X   X \n" +
+                " X   X   X   X   X   X   X \n" +
+                " X   X   X   X   X   X   X \n" +
+                " X   X   X   X   X   X   X \n" +
+                " X   X   X   X   X   X   X ";
         String cleanMonth = dirtyMonth;
 
         for (int i = 0; i < firstDayNumber; ++i) {
-            cleanMonth = cleanMonth.replaceFirst("X", "_");
+            cleanMonth = cleanMonth.replaceFirst("X", " ");
         }
 
         for (int i = 1; i <= days; ++i) {
-            cleanMonth = cleanMonth.replaceFirst("X", String.valueOf(i));
+            if (i < 10)
+                cleanMonth = cleanMonth.replaceFirst("X", String.valueOf(i));
+            else
+                cleanMonth = cleanMonth.replaceFirst("X ", String.valueOf(i));
         }
         cleanMonth = cleanMonth.replaceAll("X", "");
         System.out.println(cleanMonth);
